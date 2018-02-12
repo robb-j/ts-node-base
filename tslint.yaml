@@ -1,0 +1,12 @@
+extends: tslint-config-standard
+  
+rulesDirectory:
+  - src
+  - spec
+
+rules:
+  no-trailing-whitespace:
+    - true
+    - ignore-blank-lines
+  no-unused-variable:
+    - true

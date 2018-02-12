@@ -1,0 +1,34 @@
+{
+  "name": "ts-test",
+  "version": "0.0.1",
+  "description": "Project setup by robb-j/ts-node-base",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "coverage": "nyc --reporter=html npm test -s",
+    "coverage-summary": "nyc --reporter=text-summary npm test -s",
+    "lint": "npx tslint -p .",
+    "push-image": "node tools/buildAndPush.js",
+    "preversion": "npm run lint -s && npm test -s && tsc",
+    "postversion": "node tools/buildAndPush.js latest",
+    "start": "node dist",
+    "test": "mocha --require ts-node/register --watch-extensions ts,tsx 'spec/**/*.ts' spec/unit",
+    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "author": "robb-j",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^9.4.5",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0",
+    "nodemon": "^1.14.7",
+    "nyc": "^11.4.1",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.7.1"
+  }
+}

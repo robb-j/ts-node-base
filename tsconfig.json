@@ -1,0 +1,18 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": [ "es2016" ],
+    "outDir": "dist",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "tools/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
