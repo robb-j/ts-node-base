@@ -1,18 +1,22 @@
-FROM node:9-alpine as base
+# [0] A common base for both stages
+FROM node:10-alpine as base
 WORKDIR /app
 COPY ["package.json", "package-lock.json", "tsconfig.json", "/app/"]
 
-# A builder image to compile the typescript and install modules
+# [1] A builder to install modules and run a build
+# (installs production deps., clones them then installs dev)
 FROM base as builder
-RUN npm install -s --production \
-  && mkdir -p /app/node_modules \
-  && cp -R node_modules node_modules_prod \
-  && npm install -s > /dev/null
+RUN npm ci > /dev/null
 COPY src /app/src
 RUN npm run build -s
 
-# From the base, copy the dist and node modules out
-FROM base as dist
-COPY --from=builder /app/dist /app/dist
-COPY --from=builder /app/node_modules_prod /app/node_modules
-CMD [ "npm", "start", "-s" ]
+# [2] Run tests
+FROM builder as tester
+COPY spec /app/spec
+RUN npm test -s > /dev/null
+
+# [3] From the base, copy the dist/ and production node modules in and start
+FROM builder as dist
+RUN npm prune --production
+ENTRYPOINT [ "npm" ]
+CMD [ "start", "-s" ]

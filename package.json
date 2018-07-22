@@ -1,34 +1,33 @@
 {
-  "name": "ts-test",
-  "version": "0.0.1",
+  "name": "ts-node-base",
+  "version": "0.0.0",
   "description": "Project setup by robb-j/ts-node-base",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "coverage": "nyc --reporter=html npm test -s",
-    "coverage-summary": "nyc --reporter=text-summary npm test -s",
     "lint": "npx tslint -p .",
-    "push-image": "node tools/buildAndPush.js",
-    "preversion": "npm run lint -s && npm test -s && tsc",
-    "postversion": "node tools/buildAndPush.js latest",
-    "start": "node dist",
-    "test": "mocha --require ts-node/register --watch-extensions ts,tsx 'spec/**/*.ts' spec/unit",
-    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "preversion": "npm run lint -s && npm test -s && tsc && git add -A dist",
+    "start": "node -r tsconfig-paths/register dist",
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register 'spec/**/*.ts'",
+    "dev": "nodemon -w src -e ts -x ts-node -q src/index.ts"
   },
   "author": "robb-j",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "tsconfig-paths": "^3.4.2"
+  },
   "devDependencies": {
-    "@types/chai": "^4.1.2",
-    "@types/mocha": "^2.2.48",
-    "@types/node": "^9.4.5",
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.5.2",
     "chai": "^4.1.2",
-    "mocha": "^4.1.0",
-    "nodemon": "^1.14.7",
-    "nyc": "^11.4.1",
-    "ts-node": "^4.1.0",
-    "tslint": "^5.9.1",
-    "tslint-config-standard": "^7.0.0",
-    "typescript": "^2.7.1"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "nyc": "^12.0.2",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^7.1.0",
+    "typescript": "^2.9.2"
   }
 }

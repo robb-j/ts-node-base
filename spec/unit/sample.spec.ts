@@ -1,4 +1,4 @@
-import App from '../../src/App'
+import App from 'src/App'
 import { expect } from 'chai'
 
 describe('sample', function () {

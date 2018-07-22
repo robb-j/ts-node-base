@@ -1,5 +1,3 @@
 
 rules:
-  
-  # Disable for expect(x).to.exist
-  no-unused-expression: false
+  no-unused-expression: false # Allow expect(x).to.exist
