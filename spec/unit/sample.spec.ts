@@ -1,14 +1,13 @@
 import App from 'src/App'
 import { expect } from 'chai'
 
-describe('sample', function () {
-  
+describe('sample', function() {
   let app: App
-  beforeEach(function () {
+  beforeEach(function() {
     app = new App()
   })
-  
-  it('should exist', function () {
+
+  it('should exist', function() {
     expect(app).to.exist
   })
 })

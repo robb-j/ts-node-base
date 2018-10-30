@@ -1,6 +1,5 @@
-
 export default class App {
-  run () {
+  run() {
     console.log('Hello, World!!')
   }
 }

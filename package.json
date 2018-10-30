@@ -8,6 +8,7 @@
     "coverage": "nyc --reporter=html npm test -s",
     "lint": "npx tslint -p .",
     "preversion": "npm run lint -s && npm test -s && tsc && git add -A dist",
+    "prettier": "prettier --write ./**/*.{js,ts,json,css,md}",
     "start": "node -r tsconfig-paths/register dist",
     "test": "mocha -r ts-node/register -r tsconfig-paths/register 'spec/**/*.ts'",
     "dev": "nodemon -w src -e ts -x ts-node -q src/index.ts"
@@ -38,9 +39,8 @@
     "mocha": "^5.2.0",
     "nodemon": "^1.18.5",
     "nyc": "^13.1.0",
+    "prettier": "1.14.3",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.1.4"
   }
 }

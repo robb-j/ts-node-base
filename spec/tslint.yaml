@@ -1,3 +1,0 @@
-
-rules:
-  no-unused-expression: false # Allow expect(x).to.exist
