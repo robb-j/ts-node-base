@@ -14,20 +14,33 @@
   },
   "author": "robb-j",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
-    "tsconfig-paths": "^3.4.2"
+    "tsconfig-paths": "^3.6.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.4",
+    "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.5.2",
-    "chai": "^4.1.2",
+    "@types/node": "^10.12.1",
+    "chai": "^4.2.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^8.0.3",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.3",
-    "nyc": "^12.0.2",
-    "ts-node": "^7.0.0",
+    "nodemon": "^1.18.5",
+    "nyc": "^13.1.0",
+    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "tslint-config-standard": "^7.1.0",
-    "typescript": "^2.9.2"
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.1.4"
   }
 }
