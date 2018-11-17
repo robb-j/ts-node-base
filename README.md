@@ -23,7 +23,4 @@ npm run coverage-summary  # outputs to terminal
 
 # Watch code with nodemon (restarts on file changes)
 npm run watch
-
-# Update version (builds & pushes a new docker image)
-npm version ... # --help
 ```
