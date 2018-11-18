@@ -11,16 +11,19 @@ A project setup with [robb-j/ts-node-base](https://github.com/robb-j/ts-node-bas
 ## Dev Commands
 
 ```bash
+# Watch code with nodemon (restarts on file changes)
+npm run dev
+
 # Lint the web & test directories
 npm run lint
+
+# Manually format code
+# -> This repo runs prettier on git-stage, so code is always formatted
+npm run prettier
 
 # Run the unit tests
 npm test
 
-# Generate coverage
-npm run coverage          # outputs to coverage/
-npm run coverage-summary  # outputs to terminal
-
-# Watch code with nodemon (restarts on file changes)
-npm run watch
+# Generate code coverage
+npm run coverage
 ```
