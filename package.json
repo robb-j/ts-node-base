@@ -1,19 +1,19 @@
 {
   "name": "ts-node-base",
   "version": "0.0.0",
-  "description": "Project setup by robb-j/ts-node-base",
+  "private": false,
+  "description": "",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "coverage": "nyc --reporter=html npm test -s",
-    "lint": "npx tslint -p .",
-    "preversion": "npm run lint -s && npm test -s && tsc && git add -A dist",
-    "prettier": "prettier --write ./**/*.{js,ts,json,css,md}",
-    "start": "node -r tsconfig-paths/register dist",
-    "test": "mocha -r ts-node/register -r tsconfig-paths/register 'spec/**/*.ts'",
-    "dev": "nodemon -w src -e ts -x ts-node -q src/index.ts"
+    "preversion": "npm test -s && tsc && git add dist",
+    "prettier": "prettier --write ./**/*.{js,ts,tsx,json,css,md}",
+    "start": "node -r dotenv/config dist",
+    "test": "mocha -r ts-node/register 'src/**/*.spec.ts'",
+    "watch": "nodemon -w src -e ts -x 'ts-node -r dotenv/config' -q src/index.ts"
   },
-  "author": "robb-j",
+  "author": "Rob Anderson (https://r0b.io)",
   "license": "ISC",
   "husky": {
     "hooks": {
@@ -21,26 +21,24 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,json,css,md}": [
+    "*.{js,ts,tsx,json,css,md}": [
       "prettier --write",
       "git add"
     ]
   },
-  "dependencies": {
-    "tsconfig-paths": "^3.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.1",
+    "@types/node": "^10.12.12",
     "chai": "^4.2.0",
-    "husky": "^1.1.2",
-    "lint-staged": "^8.0.3",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.5",
+    "nodemon": "^1.18.7",
     "nyc": "^13.1.0",
-    "prettier": "1.14.3",
+    "prettier": "1.15.3",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.4"
+    "typescript": "^3.2.2"
   }
 }
