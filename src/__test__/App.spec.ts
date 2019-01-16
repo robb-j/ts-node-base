@@ -1,13 +1,12 @@
 import App from '../App'
-import { expect } from 'chai'
 
-describe('sample', function() {
+describe('sample', () => {
   let app: App
-  beforeEach(function() {
+  beforeEach(() => {
     app = new App()
   })
 
-  it('should exist', function() {
-    expect(app).to.exist
+  it('should exist', async () => {
+    expect(app).toBeDefined()
   })
 })
