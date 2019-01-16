@@ -5,25 +5,29 @@ A project setup with [robb-j/ts-node-base](https://github.com/robb-j/ts-node-bas
 ## Features
 
 - Multi-stage docker build to install, test and deploy
-- Testing setup with `mocha`, `chai` & `nyc`
-- Linting setup with `tslint`
+- Testing setup with `jest`, `ts-jest`
+- Linting setup with `tsc`
+- Auto load `.env` files with `dotenv`
 
 ## Dev Commands
 
 ```bash
-# Watch code with nodemon (restarts on file changes)
-npm run dev
+# Run the app in dev mode
+npm run dev:once
 
-# Lint the web & test directories
+# Run in dev mode and restart on file changes
+npm run dev:watch
+
+# Lint the source code
 npm run lint
 
 # Manually format code
-# -> This repo runs prettier on git-stage, so code is always formatted
+# -> This repo runs prettier on git-stage, so committed code is always formatted
 npm run prettier
 
 # Run the unit tests
 npm test
 
-# Generate code coverage
+# Generate code coverage in coverage/
 npm run coverage
 ```
