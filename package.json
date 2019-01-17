@@ -9,7 +9,7 @@
     "lint": "npx tsc --noEmit",
     "coverage": "jest --coverage",
     "preversion": "npm test -s && npm run build && git add dist",
-    "prettier": "prettier --write ./**/*.{js,ts,tsx,json,css,md}",
+    "prettier": "prettier --write '**/*.{js,ts,tsx,json,css,md}'",
     "start": "node -r dotenv/config dist/index.js",
     "test": "jest",
     "dev:once": "ts-node -r dotenv/config src/index.ts",
