@@ -5,32 +5,30 @@ This project was setup with [robb-j/ts-node-base](https://github.com/robb-j/ts-n
 ## Template Features
 
 - Multi-stage docker build to install, test and deploy
-- Testing & code coverage setup with `mocha`, `chai` & `nyc`
+- Testing setup with `jest`, `ts-jest`
 - Linting setup with `tsc`
-- Code formatting with prettier on git file stage
-- Semantically versioned docker images using `npm version`
+- Auto load `.env` files with `dotenv`
 
 ## Dev Commands
 
 ```bash
-# Start the app and reload on file changes
-npm run watch
+# Run the app in dev mode
+npm run dev:once
 
-# Compile typescript
-npm run build
+# Run in dev mode and restart on file changes
+npm run dev:watch
 
-# Update version (builds & pushes a new docker image)
-# -> Uses the REGISTRY file & the npm version to tag image
-npm version ... # --help
+# Lint the source code
+npm run lint
 
 # Manually format code
-# -> This repo runs prettier on git-stage, so code is always to standard
+# -> This repo runs prettier on git-stage, so committed code is always formatted
 npm run prettier
 
 # Run the unit tests
 # -> Looks for .spec.ts files in the src directory
 npm test
 
-# Generate code coverage
+# Generate code coverage in coverage/
 npm run coverage
 ```
