@@ -1,3 +1,8 @@
+#
+# Ignore files from the docker command
+#
+
+.git
 node_modules
 coverage
 .DS_Store

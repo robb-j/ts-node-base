@@ -1,10 +1,12 @@
 {
-  "name": "ts-node-base",
+  "name": "create-robbj-ts-node",
   "version": "0.0.0",
   "private": true,
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "author": "Rob Anderson (https://r0b.io)",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "lint": "npx tsc --noEmit",
@@ -13,11 +15,8 @@
     "prettier": "prettier --write '**/*.{js,ts,tsx,json,css,md}'",
     "start": "node -r dotenv/config dist/index.js",
     "test": "jest",
-    "dev:once": "ts-node -r dotenv/config src/index.ts",
-    "dev:watch": "nodemon -w src -e ts -x 'npx ts-node -r dotenv/config' src/index.ts"
+    "dev": "nodemon -w src -e ts -x 'npx ts-node -r dotenv/config' src/index.ts"
   },
-  "author": "Rob Anderson (https://r0b.io)",
-  "license": "ISC",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

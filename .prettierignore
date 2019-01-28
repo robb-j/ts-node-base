@@ -1,4 +1,7 @@
-.git
+#
+# Files for prettier to ignore
+#
+
 dist
 coverage
 node_modules

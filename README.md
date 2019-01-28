@@ -1,4 +1,4 @@
-# Typescript Node Sample Project
+# Typescript Node Project
 
 A project setup with [robb-j/ts-node-base](https://github.com/robb-j/ts-node-base/) template which creates a node app, with the common things already setup for Typescript.
 
