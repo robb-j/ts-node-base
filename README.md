@@ -1,8 +1,8 @@
-# Typescript Node Project
+# A Typescript Node Project
 
-A project setup with [robb-j/ts-node-base](https://github.com/robb-j/ts-node-base/) template which creates a node app, with the common things already setup for Typescript.
+This project was setup with [robb-j/ts-node-base](https://github.com/robb-j/ts-node-base/) which creates a node app, with the common things already setup for Typescript.
 
-## Features
+## Template Features
 
 - Multi-stage docker build to install, test and deploy
 - Testing setup with `jest`, `ts-jest`
@@ -26,6 +26,7 @@ npm run lint
 npm run prettier
 
 # Run the unit tests
+# -> Looks for .spec.ts files in the src directory
 npm test
 
 # Generate code coverage in coverage/
