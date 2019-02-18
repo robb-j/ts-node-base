@@ -1,12 +1,12 @@
-import App from '../App'
+import App from '../App';
 
 describe('sample', () => {
-  let app: App
+  let app: App;
   beforeEach(() => {
-    app = new App()
-  })
+    app = new App();
+  });
 
   it('should exist', async () => {
-    expect(app).toBeDefined()
-  })
-})
+    expect(app).toBeDefined();
+  });
+});
