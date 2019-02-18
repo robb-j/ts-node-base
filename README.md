@@ -12,11 +12,8 @@ This project was setup with [robb-j/ts-node-base](https://github.com/robb-j/ts-n
 ## Dev Commands
 
 ```bash
-# Run the app in dev mode
-npm run dev:once
-
 # Run in dev mode and restart on file changes
-npm run dev:watch
+npm run dev
 
 # Lint the source code
 npm run lint
