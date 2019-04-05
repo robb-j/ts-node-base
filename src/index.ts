@@ -1,5 +1,3 @@
-import App from './App'
-
-let app = new App()
-
-app.run()
+;(async () => {
+  console.log('Hello, World!')
+})()
